@@ -1,0 +1,31 @@
+{
+  "random_sample_size": 60,
+  "targeted_size": 35,
+  "unique_records": 95,
+  "random_subject_counts": {
+    "Biology": 35,
+    "Earth and Space Science": 7,
+    "Physics": 10,
+    "Chemistry": 6,
+    "Unresolved": 1,
+    "General Science": 1
+  },
+  "targeted_subject_counts": {
+    "Biology": 8,
+    "Physics": 2,
+    "General Science": 22,
+    "Chemistry": 1,
+    "Earth and Space Science": 2
+  },
+  "unique_subject_counts": {
+    "Biology": 43,
+    "Earth and Space Science": 9,
+    "Physics": 12,
+    "Chemistry": 7,
+    "Unresolved": 1,
+    "General Science": 23
+  },
+  "seed": 637,
+  "scope": "Training split only. AI-provisional topic labels. Targeted group is enriched and must not be used to estimate prevalence.",
+  "ready_for_model_training": false
+}

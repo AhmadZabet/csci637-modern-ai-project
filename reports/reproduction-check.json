@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-04",
+  "python": "Python 3.15.2",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "dataset_revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+  "fresh_environment": true,
+  "fresh_dataset_cache": true,
+  "pip_download_cache_reused": true,
+  "scripts": [
+    "phase1_inspect_data.py",
+    "phase1_clean_data.py",
+    "phase1_prepare_evaluation.py",
+    "phase1_review_evaluation.py",
+    "phase1_audit_evaluation.py",
+    "phase1_adapt_evaluation.py",
+    "phase1_check_taxonomy.py",
+    "phase1_label_subject_pilot.py"
+  ],
+  "compared_files": 22,
+  "all_match": true,
+  "files": [
+    {
+      "file": "data/annotations/subject_pilot.json",
+      "same_bytes": true,
+      "sha256": "7001f43fddd6398112ef1f3c4fc17665617efeac4daac2f64955b1e4330f11c7"
+    },
+    {
+      "file": "data/annotations/subject_pilot_summary.json",
+      "same_bytes": true,
+      "sha256": "0ec460cc7f950153a16bb51348c86b24fdae671b5d0c40dc59fac38b5d6989a5"
+    },
+    {
+      "file": "data/evaluation/evaluation_adaptations_v2.json",
+      "same_bytes": true,
+      "sha256": "8ddf2c0dd22ac2b3ddf1dbc3ffb433f2bd5cb3ecb462d4a705543d06015527c2"
+    },
+    {
+      "file": "data/evaluation/evaluation_replacements.json",
+      "same_bytes": true,
+      "sha256": "eb1c3c5a853f8be8f48de73770ed4251cebd0f4463825296af040a705f038bed"
+    },
+    {
+      "file": "data/evaluation/phase1_candidates.json",
+      "same_bytes": true,
+      "sha256": "ebf28e95ebfd7e800a90d5f06d36a4244e07047a7c30ed99be51ffeae8f79ffc"
+    },
+    {
+      "file": "data/evaluation/phase1_evaluation.json",
+      "same_bytes": true,
+      "sha256": "365000a0d5328f937e8ece24b11ce654afe41a4d346b8d2e8cfb2730c5b51828"
+    },
+    {
+      "file": "data/evaluation/phase1_evaluation_v2.json",
+      "same_bytes": true,
+      "sha256": "eefa9316575ab1ebcfb9820dcdc5b9c10cbe053f68a21ad0220fe63896453178"
+    },
+    {
+      "file": "data/evaluation/quality_audit.json",
+      "same_bytes": true,
+      "sha256": "3c67a2e35858cf8bf3fafc54c81edfef03a35cf4f0dc1933309aaa9ce3b28567"
+    },
+    {
+      "file": "data/evaluation/review_summary.json",
+      "same_bytes": true,
+      "sha256": "0614f5cb30ed728f16abfbc93ad14862f52dc028824cc0f11276f09c52f0d2e2"
+    },
+    {
+      "file": "data/evaluation/review_summary_v2.json",
+      "same_bytes": true,
+      "sha256": "919044819a835ddbd976c5758d800b613e14e020653283c54565d0daed3b741b"
+    },
+    {
+      "file": "data/evaluation/selection_manifest.json",
+      "same_bytes": true,
+      "sha256": "fbbb8712d34f4d289afb816a55ea1cd3374e9824ed9220e239b31a257c3c8a40"
+    },
+    {
+      "file": "data/processed/answer_review_queue.json",
+      "same_bytes": true,
+      "sha256": "bbcde288e628157e73c00655608a75934a8e8aa4339c643347b75944cc625abf"
+    },
+    {
+      "file": "data/processed/cleaning_audit.json",
+      "same_bytes": true,
+      "sha256": "05281a69f7bcd217d756411dd5783cc3d79b2121b789b2cd0f64392d16b227a2"
+    },
+    {
+      "file": "data/processed/passages.json",
+      "same_bytes": true,
+      "sha256": "9924218aab690c994ccc55bc42009cf728258fd9c25575865a0cdf6ef905c1dd"
+    },
+    {
+      "file": "data/processed/raw_sha256.json",
+      "same_bytes": true,
+      "sha256": "f0e6addc63d58762efe94b181782221bf9ec9c88796499d6c93df43d53b417e7"
+    },
+    {
+      "file": "data/processed/sciq_test.json",
+      "same_bytes": true,
+      "sha256": "603891f4322751c2180c00b44641fb71abeca6b2b3c86af4bf29ee5f4e144120"
+    },
+    {
+      "file": "data/processed/sciq_train.json",
+      "same_bytes": true,
+      "sha256": "de9206300fc88374dfc5577c5e483bf26df4b59e8ff40a6be28ca4ecdb337c9f"
+    },
+    {
+      "file": "data/processed/sciq_validation.json",
+      "same_bytes": true,
+      "sha256": "1cd206a0d3878e028be98cca6c78ccb29ead6cf49e78d6ce03d32c43f0783c8d"
+    },
+    {
+      "file": "data/raw/sciq_test.json",
+      "same_bytes": true,
+      "sha256": "44fbf6b3954d700266d11ad2dd0dc12d3f005fe2c210459a8011a6badabc4a93"
+    },
+    {
+      "file": "data/raw/sciq_train.json",
+      "same_bytes": true,
+      "sha256": "158600d883ce0a59f0896db916b140b1460e6282b3c28179c6775bf5875ee974"
+    },
+    {
+      "file": "data/raw/sciq_validation.json",
+      "same_bytes": true,
+      "sha256": "f9b8d02fca942d8fdd30044ac7d199b80dfbffbee0d13be8d8c4d19214558df8"
+    },
+    {
+      "file": "data/taxonomy_coverage.json",
+      "same_bytes": true,
+      "sha256": "97eddf6464b21931092adb01eec06af1758426272794ff4e649ffb7e0d77d1d8"
+    }
+  ]
+}

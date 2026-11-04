@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-04",
+  "python_files": 3,
+  "source_bytes_before": 47227,
+  "source_bytes_after": 7958,
+  "compared_current_json_artifacts": 8,
+  "comparison": "Parsed JSON equality; all passed",
+  "test_mode": "Isolated directory, existing pinned raw JSON; previously verified fresh environment reused",
+  "scope": "Current cleaned data and final evaluation; historical exploratory stages retained as data"
+}

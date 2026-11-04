@@ -1,0 +1,328 @@
+[
+  {
+    "number": 1,
+    "source_id": "sciq_test_00566",
+    "adapted_id": "sciq_test_00566_adapted_v2",
+    "before": {
+      "question": "How many meters deep does the photic zone extend?"
+    },
+    "after": {
+      "question": "According to the passage, what maximum depth in meters can the photic zone reach?"
+    },
+    "reason": "Question omits maximum depth; existing review note supplies a qualification absent from the question.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 8,
+    "source_id": "sciq_test_00782",
+    "adapted_id": "sciq_test_00782_adapted_v2",
+    "before": {
+      "question": "What is it called when two plates slide past each other in opposite directions?",
+      "choices": {
+        "A": "transformation",
+        "B": "transform plate boundary",
+        "C": "tectonic movement",
+        "D": "plate divergence"
+      }
+    },
+    "after": {
+      "question": "What type of plate boundary forms where two plates slide past each other?",
+      "choices": {
+        "A": "convergent plate boundary",
+        "B": "transform plate boundary",
+        "C": "divergent plate boundary",
+        "D": "subduction boundary"
+      }
+    },
+    "reason": "Tectonic movement is broader than transform plate boundary and fits the loose wording.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 10,
+    "source_id": "sciq_test_00164",
+    "adapted_id": "sciq_test_00164_adapted_v2",
+    "before": {
+      "question": "Myofibrils are long cylindrical structures that lie parallel to and run the entire length of what fibers?",
+      "choices": {
+        "A": "heart muscle fibers",
+        "B": "luminous muscle fibers",
+        "C": "uplift muscle fibers",
+        "D": "skeletal muscle fibers"
+      }
+    },
+    "after": {
+      "question": "According to the passage, myofibrils run the entire length of which type of muscle fiber?",
+      "choices": {
+        "A": "collagen fibers",
+        "B": "elastic fibers",
+        "C": "nerve fibers",
+        "D": "skeletal muscle fibers"
+      }
+    },
+    "reason": "Passage describes skeletal muscle but does not establish exclusivity against the heart-muscle option.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 14,
+    "source_id": "sciq_test_00036",
+    "adapted_id": "sciq_test_00036_adapted_v2",
+    "before": {
+      "question": "Chemical reactions involve a transfer of heat energy. measured in what?",
+      "choices": {
+        "A": "amps",
+        "B": "amperes",
+        "C": "thermals",
+        "D": "joules"
+      }
+    },
+    "after": {
+      "question": "In which unit is heat energy measured?",
+      "choices": {
+        "A": "amperes",
+        "B": "meters",
+        "C": "seconds",
+        "D": "joules"
+      }
+    },
+    "reason": "Amps and amperes are synonymous alternatives.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 16,
+    "source_id": "sciq_test_00899",
+    "adapted_id": "sciq_test_00899_adapted_v2",
+    "before": {
+      "question": "What theory states that there is no interaction between individual gas particles?"
+    },
+    "after": {
+      "question": "Which theory, in its ideal-gas model, neglects intermolecular interactions between gas particles?"
+    },
+    "reason": "The ideal-gas qualification is supplied only in the review note.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 31,
+    "source_id": "sciq_test_00599",
+    "adapted_id": "sciq_test_00599_adapted_v2",
+    "before": {
+      "question": "What process takes place when plants release water vapor through pores in their leaves called stomata?",
+      "choices": {
+        "A": "expiration",
+        "B": "evaporation",
+        "C": "transpiration",
+        "D": "propagation"
+      }
+    },
+    "after": {
+      "question": "What is the specific name for water loss as vapor from plants through leaf stomata?",
+      "choices": {
+        "A": "germination",
+        "B": "pollination",
+        "C": "transpiration",
+        "D": "fertilization"
+      }
+    },
+    "reason": "Evaporation is a component of the process; intended named plant process should be explicit.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 39,
+    "source_id": "sciq_test_00353",
+    "adapted_id": "sciq_test_00353_adapted_v2",
+    "before": {
+      "question": "Two smaller isotopes, more neutrons, and heat energy are the products of what type of reaction?",
+      "evidence_excerpt": null
+    },
+    "after": {
+      "question": "According to the passage, which nuclear process produces smaller nuclei, additional neutrons, and heat?",
+      "evidence_excerpt": "The products of a fission reaction are two smaller isotopes, more neutrons, and heat energy."
+    },
+    "reason": "The passage says slow neuron; this error could propagate to explanations.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 50,
+    "source_id": "sciq_test_00863",
+    "adapted_id": "sciq_test_00863_adapted_v2",
+    "before": {
+      "question": "If a substance has a ph value greater than 7, what does it indicate?",
+      "evidence_excerpt": null
+    },
+    "after": {
+      "question": "In the introductory aqueous-solution context of the passage, a pH above 7 indicates which option?",
+      "evidence_excerpt": "A pH value greater than 7 indicates a base"
+    },
+    "reason": "The passage describes higher pH as a stronger base without controlling concentration; the question also leaves conditions implicit.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 57,
+    "source_id": "sciq_test_00417",
+    "adapted_id": "sciq_test_00417_adapted_v2",
+    "before": {
+      "question": "All chemical reactions involve both reactants and what else?",
+      "choices": {
+        "A": "energy",
+        "B": "consumers",
+        "C": "catalysts",
+        "D": "products"
+      }
+    },
+    "after": {
+      "question": "What name is given to the substances formed by a chemical reaction?",
+      "choices": {
+        "A": "solvents",
+        "B": "reactants",
+        "C": "catalysts",
+        "D": "products"
+      }
+    },
+    "reason": "Energy and products can both satisfy the broad phrase what else.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 58,
+    "source_id": "sciq_test_00110",
+    "adapted_id": "sciq_test_00110_adapted_v2",
+    "before": {
+      "question": "What do you call the study of how organisms interact with their environment and each other?",
+      "choices": {
+        "A": "biology",
+        "B": "climatology",
+        "C": "ecology",
+        "D": "biochemistry"
+      }
+    },
+    "after": {
+      "question": "Which specialized branch of biology studies interactions among organisms and their environment?",
+      "choices": {
+        "A": "genetics",
+        "B": "cell biology",
+        "C": "ecology",
+        "D": "biochemistry"
+      }
+    },
+    "reason": "The passage explicitly includes ecology within Biology, another choice.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 60,
+    "source_id": "sciq_test_00128",
+    "adapted_id": "sciq_test_00128_adapted_v2",
+    "before": {
+      "question": "What are cells without a nucleus called?"
+    },
+    "after": {
+      "question": "In the prokaryotic/eukaryotic distinction described in the passage, which cell category lacks a nucleus?"
+    },
+    "reason": "Question universally equates absence of a nucleus with the prokaryotic category; review note already records exceptions.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 73,
+    "source_id": "sciq_test_00177",
+    "adapted_id": "sciq_test_00177_adapted_v2",
+    "before": {
+      "question": "In physics, when one subtracts the frictional force from the applied force what is the result?"
+    },
+    "after": {
+      "question": "An object has an applied force and an opposing frictional force along one line, with all other forces balanced. What is the applied force minus friction?"
+    },
+    "reason": "Subtraction requires opposing collinear forces; the question and one-sentence evidence omit this.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 84,
+    "source_id": "sciq_test_00465",
+    "adapted_id": "sciq_test_00465_adapted_v2",
+    "before": {
+      "question": "Because optics fibers are thin, entering light may strike the inside surface at greater than the critical angle, requiring attention to what?",
+      "evidence_excerpt": null
+    },
+    "after": {
+      "question": "Which property of the fiber and its surrounding coating must be appropriately chosen to permit total internal reflection?",
+      "evidence_excerpt": "The index of refraction outside the fiber must be smaller than inside, a condition that is easily satisfied by coating the outside of the fiber with a material having an appropriate refractive index."
+    },
+    "reason": "Requiring attention to what is underspecified; passage also uses total internal refraction after describing reflection.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 88,
+    "source_id": "sciq_test_00698",
+    "adapted_id": "sciq_test_00698_adapted_v2",
+    "before": {
+      "question": "In relation to electrical current, what property will a narrow wire have more of than a wide wire?"
+    },
+    "after": {
+      "question": "Two wires have the same material, length and temperature. Which property is greater for the narrower wire?"
+    },
+    "reason": "Resistance comparison needs controlled length and material; question omits both.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 96,
+    "source_id": "sciq_test_00414",
+    "adapted_id": "sciq_test_00414_adapted_v2",
+    "before": {
+      "question": "What type of telescopes collect and focus radio waves from distant objects?",
+      "choices": {
+        "A": "reflecting telescopes",
+        "B": "refracting telescopes",
+        "C": "radio telescopes",
+        "D": "space telescopes"
+      }
+    },
+    "after": {
+      "question": "Which telescope category is defined by detecting radio waves?",
+      "choices": {
+        "A": "X-ray telescopes",
+        "B": "ultraviolet telescopes",
+        "C": "radio telescopes",
+        "D": "infrared telescopes"
+      }
+    },
+    "reason": "Astronomical observing band and reflector design/location are different dimensions; radio and reflecting/space telescopes need not be exclusive.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  },
+  {
+    "number": 97,
+    "source_id": "sciq_test_00189",
+    "adapted_id": "sciq_test_00189_adapted_v2",
+    "before": {
+      "question": "What unit do astronomers use to describe distances in space?",
+      "choices": {
+        "A": "light months",
+        "B": "gravity years",
+        "C": "light years",
+        "D": "quantum years"
+      }
+    },
+    "after": {
+      "question": "What distance unit is defined as the distance light travels in one year?",
+      "choices": {
+        "A": "astronomical unit",
+        "B": "parsec",
+        "C": "light years",
+        "D": "kilometers"
+      }
+    },
+    "reason": "Light months is also a distance unit; intended conventional unit is not uniquely established by the broad question.",
+    "reviewer": "OpenAI Codex",
+    "date": "2026-11-04"
+  }
+]

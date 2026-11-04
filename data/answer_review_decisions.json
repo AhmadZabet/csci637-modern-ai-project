@@ -1,0 +1,26 @@
+[
+  {
+    "question_key": "how many sperm does it take to fertilize an egg?",
+    "keep_id": "sciq_train_02750",
+    "reason": "Equivalent number wording: one and 1; keep earlier original record.",
+    "approved_by": "Ahmad (confirmed in chat)",
+    "approved_date": "2026-11-03",
+    "scope": "Duplicate resolution only; not evaluation-set review"
+  },
+  {
+    "question_key": "what does magma that cools underground form?",
+    "keep_id": "sciq_train_00997",
+    "reason": "Both passages say intrusions; exclude the duplicate with the typo instrusions.",
+    "approved_by": "Ahmad (confirmed in chat)",
+    "approved_date": "2026-11-03",
+    "scope": "Duplicate resolution only; not evaluation-set review"
+  },
+  {
+    "question_key": "what is the unit of evolution?",
+    "keep_id": "sciq_train_01465",
+    "reason": "Equivalent wording: the population and population; keep earlier original record.",
+    "approved_by": "Ahmad (confirmed in chat)",
+    "approved_date": "2026-11-03",
+    "scope": "Duplicate resolution only; not evaluation-set review"
+  }
+]

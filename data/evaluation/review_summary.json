@@ -1,0 +1,16 @@
+{
+  "items": 100,
+  "human_confirmed": 2,
+  "ai_reviewed": 98,
+  "replaced": 28,
+  "subjects": {
+    "Earth and Space Science": 18,
+    "Physics": 19,
+    "Biology": 44,
+    "Chemistry": 19
+  },
+  "difficulty": "Not assigned: no empirical difficulty measurement.",
+  "review_scope": "Passage-grounded AI review with recorded limitations; not 100 human-reviewed examples.",
+  "selection_bias": "Initial seeded random pool; 28 editorial replacements selected from seed-638 shuffled unused test records with support under 650 characters. This favors short, clear, directly supported questions and is not a representative random benchmark.",
+  "remaining_limitations": "Mostly recall questions. No missing-evidence cases. Shared supporting passages may occur in training corpus. Model pretraining contamination is unknown. Full passage factual accuracy is not independently verified."
+}

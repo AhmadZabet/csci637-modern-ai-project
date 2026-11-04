@@ -1,0 +1,170 @@
+[
+  {
+    "original_number": 5,
+    "excluded_id": "sciq_test_00061",
+    "reason": "Cycle length assumption omitted.",
+    "replacement_id": "sciq_test_00337"
+  },
+  {
+    "original_number": 7,
+    "excluded_id": "sciq_test_00463",
+    "reason": "Water overlaps with solvent.",
+    "replacement_id": "sciq_test_00096"
+  },
+  {
+    "original_number": 13,
+    "excluded_id": "sciq_test_00215",
+    "reason": "Flowers overlap with plants.",
+    "replacement_id": "sciq_test_00175"
+  },
+  {
+    "original_number": 15,
+    "excluded_id": "sciq_test_00949",
+    "reason": "Asks for an organ system but labels an organ; passage lacks the answer.",
+    "replacement_id": "sciq_test_00259"
+  },
+  {
+    "original_number": 17,
+    "excluded_id": "sciq_test_00712",
+    "reason": "Question overgeneralizes menstrual cycling.",
+    "replacement_id": "sciq_test_00548"
+  },
+  {
+    "original_number": 18,
+    "excluded_id": "sciq_test_00938",
+    "reason": "Broad wording and no unique subject in our taxonomy.",
+    "replacement_id": "sciq_test_00210"
+  },
+  {
+    "original_number": 20,
+    "excluded_id": "sciq_test_00781",
+    "reason": "Passage conflates perceived loudness with intensity.",
+    "replacement_id": "sciq_test_00584"
+  },
+  {
+    "original_number": 22,
+    "excluded_id": "sciq_test_00660",
+    "reason": "Ambiguous attachment of lives underground.",
+    "replacement_id": "sciq_test_00268"
+  },
+  {
+    "original_number": 23,
+    "excluded_id": "sciq_test_00550",
+    "reason": "Overgeneralized origin of metals.",
+    "replacement_id": "sciq_test_00510"
+  },
+  {
+    "original_number": 25,
+    "excluded_id": "sciq_test_00008",
+    "reason": "Highly viscous and increased viscosity overlap.",
+    "replacement_id": "sciq_test_00920"
+  },
+  {
+    "original_number": 28,
+    "excluded_id": "sciq_test_00284",
+    "reason": "Closest exceeds the passage claim of one of the closest.",
+    "replacement_id": "sciq_test_00093"
+  },
+  {
+    "original_number": 37,
+    "excluded_id": "sciq_test_00031",
+    "reason": "Overly simplified thermal-energy definition.",
+    "replacement_id": "sciq_test_00916"
+  },
+  {
+    "original_number": 49,
+    "excluded_id": "sciq_test_00620",
+    "reason": "Gain in potential energy is misleading for downhill motion.",
+    "replacement_id": "sciq_test_00144"
+  },
+  {
+    "original_number": 52,
+    "excluded_id": "sciq_test_00147",
+    "reason": "Consumers and scavengers overlap.",
+    "replacement_id": "sciq_test_00505"
+  },
+  {
+    "original_number": 53,
+    "excluded_id": "sciq_test_00257",
+    "reason": "Other options include cells produced in bone marrow.",
+    "replacement_id": "sciq_test_00638"
+  },
+  {
+    "original_number": 55,
+    "excluded_id": "sciq_test_00577",
+    "reason": "Temperature and weather are also plausible cues.",
+    "replacement_id": "sciq_test_00148"
+  },
+  {
+    "original_number": 56,
+    "excluded_id": "sciq_test_00978",
+    "reason": "Question confuses removing amino acids with removing phosphate groups; support contains mixed quiz options.",
+    "replacement_id": "sciq_test_00811"
+  },
+  {
+    "original_number": 61,
+    "excluded_id": "sciq_test_00381",
+    "reason": "Protein and cytosol are both plausible.",
+    "replacement_id": "sciq_test_00611"
+  },
+  {
+    "original_number": 62,
+    "excluded_id": "sciq_test_00345",
+    "reason": "Neutral atoms also differ in electrons; question lacks defining-property qualifier.",
+    "replacement_id": "sciq_test_00228"
+  },
+  {
+    "original_number": 64,
+    "excluded_id": "sciq_test_00842",
+    "reason": "Supporting passage is unrelated anatomy attribution.",
+    "replacement_id": "sciq_test_00773"
+  },
+  {
+    "original_number": 65,
+    "excluded_id": "sciq_test_00453",
+    "reason": "Passage includes nutrition claims requiring further verification.",
+    "replacement_id": "sciq_test_00153"
+  },
+  {
+    "original_number": 67,
+    "excluded_id": "sciq_test_00043",
+    "reason": "Base strength conflated with concentration.",
+    "replacement_id": "sciq_test_00680"
+  },
+  {
+    "original_number": 74,
+    "excluded_id": "sciq_test_00029",
+    "reason": "Uses gender instead of biological sex terminology.",
+    "replacement_id": "sciq_test_00332"
+  },
+  {
+    "original_number": 80,
+    "excluded_id": "sciq_test_00691",
+    "reason": "DNA ligase is also an enzyme; overlapping choices.",
+    "replacement_id": "sciq_test_00506"
+  },
+  {
+    "original_number": 82,
+    "excluded_id": "sciq_test_00014",
+    "reason": "Passage conflates carnivory with loss of photosynthesis.",
+    "replacement_id": "sciq_test_00736"
+  },
+  {
+    "original_number": 85,
+    "excluded_id": "sciq_test_00310",
+    "reason": "Bacteria and bacterium are equivalent answer choices.",
+    "replacement_id": "sciq_test_00245"
+  },
+  {
+    "original_number": 89,
+    "excluded_id": "sciq_test_00998",
+    "reason": "Unstable repeats the premise and is another defensible choice.",
+    "replacement_id": "sciq_test_00603"
+  },
+  {
+    "original_number": 99,
+    "excluded_id": "sciq_test_00847",
+    "reason": "General science-method question outside four-subject taxonomy.",
+    "replacement_id": "sciq_test_00805"
+  }
+]

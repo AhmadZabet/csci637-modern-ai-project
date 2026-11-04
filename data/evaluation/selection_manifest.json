@@ -1,0 +1,8 @@
+{
+  "seed": 637,
+  "eligible_test_records": 878,
+  "selected": 100,
+  "reviewed": 0,
+  "selection": "Uniform random sample of cleaned test records with support, distinct choices, and no unresolved answer variants.",
+  "limitations": "Not stratified by subject. Subject balance, scientific correctness, difficulty, and passage relevance require review. This supported subset does not measure performance on missing-evidence questions."
+}

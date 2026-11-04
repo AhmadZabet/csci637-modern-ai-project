@@ -1,0 +1,9 @@
+{
+  "dataset": "allenai/sciq",
+  "revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+  "raw_sha256": {
+    "train": "158600d883ce0a59f0896db916b140b1460e6282b3c28179c6775bf5875ee974",
+    "validation": "f9b8d02fca942d8fdd30044ac7d199b80dfbffbee0d13be8d8c4d19214558df8",
+    "test": "44fbf6b3954d700266d11ad2dd0dc12d3f005fe2c210459a8011a6badabc4a93"
+  }
+}
