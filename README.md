@@ -1,113 +1,52 @@
 # Science Study Assistant
 
-**CSCI637 - Core Foundations of Modern AI | Fall 2026**  
-**Student:** Ahmad Zabet | **Instructor:** Dr. Maysaa Khalil
+Ahmad Zabet | CSCI637 | Dr. Maysaa Khalil | Fall 2026
 
-## Phase 1 overview
+## Current correction status
 
-This project prepares an English-language science study assistant using the instructor-approved SciQ dataset. The planned system will answer multiple-choice science questions with supporting evidence and classify questions into Biology, Chemistry, Physics, or Earth and Space Science.
+This repository prepares SciQ for an evidence-grounded science study assistant and four-class subject classification. Corrections to the 10 November Phase 1 feedback are dated 17 November. Phase 2 training has not started. Personal review of the 100 main questions and 16 adaptations is complete. Classification-label review is complete for the starter subsets. Deadline confirmation remains open. All 24 challenge cases have student approval.
 
-Phase 1 delivers the problem definition, cleaned data, a 100-item labeled evaluation set, and data documentation. Model training and performance evaluation belong to later phases. Performance targets in the report are proposed goals, not measured results.
+## Deliverables
 
-## Reading order
+| File | Purpose |
+|---|---|
+| [Project report](reports/project-report.pdf) | Cumulative report, currently Phase 1 plus the correction status |
+| [Methodology](reports/methodology.md) | Task, PEAS, subject rubric, fixed targets and correction ledger |
+| [Dataset datasheet](reports/dataset-datasheet.md) | Sources, license, preparation and biases |
+| [Evaluation](reports/evaluation.md) | Main evaluation, adaptations, challenge tracks and personal-review instructions |
+| [Data preparation](reports/data-preparation.md) | Cleaning, reproduction and current verification |
+| [AI disclosure](AI_USE.md) | Detailed assistance and review provenance |
 
-| Order | Deliverable | Contents |
-|---|---|---|
-| 1 | [Phase 1 report](reports/project-report.pdf) | Three-page account of the problem, methods, findings and limitations |
-| 2 | [Dataset datasheet](reports/dataset-datasheet.md) | Sources, license, preparation, annotation and known biases |
-| 3 | [Evaluation review](reports/evaluation.md) | Readable questions, labels, evidence and review notes |
-| 4 | [Evaluation data](data/evaluation/phase1_evaluation_v2.json) | Machine-readable 100-item evaluation set |
-| 5 | [AI-use disclosure](AI_USE.md) | Assistance provided and distinction between student and AI review |
-
-The four supporting Markdown reports are [methodology](reports/methodology.md), [dataset datasheet](reports/dataset-datasheet.md), [evaluation](reports/evaluation.md), and [data preparation and reproduction](reports/data-preparation.md). Detailed decisions remain in the JSON audit files. The cumulative PDF currently contains Phase 1 only; later phases will be appended when completed.
-
-## Data and current results
-
-Source: [SciQ, Allen Institute for AI](https://huggingface.co/datasets/allenai/sciq). Credit: Johannes Welbl, Nelson F. Liu, and Matt Gardner, *Crowdsourcing Multiple Choice Science Questions* (2017). License: [CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/). Project modifications are documented in the datasheet; preserve attribution and license information when sharing derived data.
-
-| Split | Original questions | Cleaned questions |
-|---|---:|---:|
-| Training | 11,679 | 11,577 |
-| Validation | 1,000 | 1,000 |
-| Test | 1,000 | 1,000 |
-
-The corpus contains 12,148 distinct nonempty supporting passages. The evaluation subset contains 100 test questions: Biology 44, Chemistry 19, Physics 19, and Earth and Space Science 18. The evaluation set has four subject labels. A separate training pilot has 94 AI-provisional labels and one unresolved record; full training/validation annotation remains future work.
-
-**Review provenance:** Version 2 has one unchanged human-confirmed item, 83 AI-reviewed original items and 16 AI-reviewed adaptations. The first item was confirmed before its wording was adapted; no approval of the revised wording is inferred. Original text and all changes are preserved. Twenty original duplicate-answer groups remain unresolved and are excluded or flagged as documented.
-
-
-## Reproduce the data preparation
-
-Run these commands in PowerShell from the repository root. Python must be installed. Activation is optional because the commands explicitly select the project environment.
+## Run from the project root
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
-```
-
-On the current Windows/Python installation, PyYAML needed its optional C extension disabled. If installation fails while building that extension, retry in the same terminal:
-
-```powershell
 $env:PYYAML_FORCE_LIBYAML = '0'
 .\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
-```
-
-Run these two commands from the repository root:
-
-```powershell
 .\.venv\Scripts\python.exe src\prepare_data.py
 .\.venv\Scripts\python.exe src\prepare_evaluation.py
 ```
 
-If the pinned raw JSON files are already present, use `prepare_data.py --skip-download` to avoid downloading again. `common.py` contains shared helpers and is not run separately.
+Use `src\prepare_data.py --skip-download` when pinned raw files already exist. The preparation step also generates labeled classification subsets from data/annotations/classification_labels.json. Data files in data/processed are regenerated rather than committed. Both scripts use common.py. The source revision and hashes are in data/source_version.json.
 
-The evaluation script applies the recorded labels, chosen options and adaptations in `data/annotations/evaluation_decisions.json` to the cleaned test data. This annotation input is intentionally preserved: the script does not automatically judge scientific answers or regenerate human/AI decisions. Historical candidate, review, taxonomy-pilot and audit files remain provenance artifacts, not additional pipeline steps. The two commands reproduce the current cleaned outputs and final evaluation. They do not rebuild historical exploratory outputs or the curated reports/PDF.
+## Current data
 
-| Location | Role |
-|---|---|
-| `src/` | Inspection, cleaning, selection and review scripts |
-| `data/raw/` | Original downloaded JSON; excluded from Git |
-| `data/processed/` | Cleaned splits, passage corpus, audit and review queue; excluded from Git |
-| `data/evaluation/` | Original candidates, reviewed set, selection metadata and replacement log |
-| `reports/` | Main PDF report and supporting documentation |
+Cleaned splits contain 11,577 training, 1,000 validation and 1,000 test records, with 12,148 unique supporting passages. The main evaluation has 100 test questions, with 44 Biology, 19 Chemistry, 19 Physics and 18 Earth and Space Science labels. The separate challenge set has 10 paraphrases, 8 no-evidence cases and 6 out-of-scope cases. These challenge prompts and expected behaviors were AI-drafted and approved by Ahmad in chat on 17 November 2026.
 
-The initial download requires internet access. The dataset revision is pinned in the download script and data/source_version.json. requirements-lock.txt records all installed package versions. A fresh Windows/Python 3.15.2 environment reproduced all 22 JSON artifacts byte for byte; see reports/data-preparation.md.
+Only a documented subset of training and validation has subject labels. Use data/processed/classification_train.json and classification_validation.json for starter classification experiments with question text as input and subject as target. Their class counts are in data/annotations/classification_summary.json. The complete SciQ splits are not fully annotated. The subset label review is complete; broader sample coverage remains necessary. General Science is outside the current four-class classifier scope, but may be handled through retrieval later.
 
-## Interpretation and limitations
+## Student evaluation review completed
 
-The curated evaluation favors clear, supported questions and is mostly recall-based. It does not measure missing-evidence refusal or broad reasoning ability. Subject imbalance and AI annotation may affect results. The corpus includes passages from held-out questions for open-book retrieval; held-out answers must not be used for training. Normalized question-text overlap was removed, but paraphrases, shared passages and pretrained-model exposure remain possible.
+On 17 November 2026, Ahmad Zabet reviewed the 100 evaluation questions in chat batches, with their choices, proposed labels, answers and relevant supporting evidence. Original and revised content was shown for all 16 adapted items. He approved all 100 labels, answers and evidence, including all 16 adaptations. He explicitly retained Chemistry for item 14 and the existing wording of item 17. The item-level decisions are recorded in data/annotations/ahmad_evaluation_review.json. This records the student review of the displayed material; broader scientific validation of every full source passage was not performed.
 
-## Planned agent: PEAS
+All 186 training and 39 validation subset labels now have recorded student approval. All 24 challenge cases have recorded student approval.
 
-| Element | Description |
-|---|---|
-| Performance | Correct answers, supported explanations, useful retrieval and subject classification; measured on held-out examples |
-| Environment | Students asking science questions over a searchable SciQ passage collection |
-| Actuators | Display an answer, explanation, passage citation and subject; indicate insufficient evidence |
-| Sensors | Receive question and four choices; read retrieved evidence |
+## Submission evidence
 
-## Methodology and coverage
+The existing annotated phase-1 tag points to commit 6b6a681272bd921292963c42b187d929dff24471 and is present on origin. Its recorded timestamp is 4 November 2026 at 04:31:05 Beirut time. Corrections preserve that tag. The exact course deadline and the instructor's late-status decision must be confirmed. Local correction files must still be committed and submitted for re-review. No grade increase is asserted.
 
-The [methodology note](reports/methodology.md) explains subject boundaries, split protection, selection bias and provisional targets. The [coverage assessment](reports/methodology.md) and [training pilot](reports/methodology.md) support considering General Science, but a fifth model class is not yet adopted. The current evaluation measures four subjects only.
+## Source and limits
 
-## Version history and audit trail
+SciQ by Johannes Welbl, Nelson F. Liu and Matt Gardner, Crowdsourcing Multiple Choice Science Questions (2017), distributed by AI2. [Dataset](https://huggingface.co/datasets/allenai/sciq). [CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/). The source and derived noncommercial data retain attribution. Evaluation curation, AI annotation, English-only coverage and recall-heavy questions limit the results. The passage collection includes evaluation evidence for open-book retrieval. No model performance is reported yet.
 
-The original candidate pool, first reviewed set, and [first quality audit](reports/evaluation.md) are historical artifacts. That audit identified 16 issues. The [adaptation log](data/evaluation/evaluation_adaptations_v2.json) records their editorial resolutions in the current version. Three items select exact evidence excerpts; full source passages are preserved and may contain defects. Specify the evidence field when reporting future scores.
-
-Current files: `data/evaluation/phase1_evaluation_v2.json`, `data/evaluation/review_summary_v2.json`, and `reports/evaluation.md`. Subject counts and membership are unchanged by adaptation. The historical version-1 audit is retained as data; it is not independent scientific validation of version 2.
-
-## Submission status
-
-Documentation and the three-page PDF reflect evaluation version 2. The quality audit and recorded editorial corrections are complete within their stated AI-review scope. Local Phase 1 preparation and the fresh-environment data reproduction check are complete within the documented review limitations. Git commit-history checks, instructor access verification and the `phase-1` release remain outstanding; the submission is not complete.
-
-Reproduction evidence: [verification report](reports/data-preparation.md) and [file hashes](reports/reproduction-check.json). The optional coverage pilot is retained as historical annotation data.
-
-Report organization: four Markdown documents in reports/ and one cumulative project-report.pdf. Per-phase GitHub tags can preserve the report at each submission stage.
-
-## Simplified source layout
-
-- `src/common.py`: shared paths and JSON/text helpers.
-- `src/prepare_data.py`: pinned download, cleaning, split checks and passage collection.
-- `src/prepare_evaluation.py`: apply recorded annotations and validate the final 100 items.
-
-An isolated check of the simplified pipeline reproduced all eight current output artifacts with identical JSON content. Key ordering may differ; this check compares values rather than serialized bytes. The earlier eight-script/22-artifact verification remains a historical check of the previous pipeline.
+Ahmad completed primary-subject review of all 186 training and 39 validation subset labels in chat batches by 24 November 2026. The original AI authorship, individual review dates and interdisciplinary decisions are retained in data/annotations/classification_labels.json. Approval covers the displayed question and answer context for subject labeling, not independent validation of every source answer or full passage. The full cleaned SciQ splits remain only partly labeled; broader annotation and class coverage are needed for reliable model comparisons.

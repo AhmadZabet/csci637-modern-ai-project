@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-17",
+  "scripts_passed": 2,
+  "regenerated_outputs": 10,
+  "all_json_content_equal": true,
+  "classification_counts": {
+    "train": {
+      "Chemistry": 27,
+      "Physics": 27,
+      "Biology": 109,
+      "Earth and Space Science": 23
+    },
+    "validation": {
+      "Biology": 23,
+      "Chemistry": 4,
+      "Physics": 7,
+      "Earth and Space Science": 5
+    }
+  },
+  "challenge_counts": {
+    "paraphrase": 10,
+    "no_evidence": 8,
+    "out_of_scope": 6
+  },
+  "main_evaluation_items": 100,
+  "personal_review_items_pending": 0,
+  "adaptations_pending": 0,
+  "scope": "Isolated data regeneration verified previously. Main-set, adaptation, challenge and classification-subset reviews subsequently completed. Full-dataset annotation and deadline confirmation remain separate.",
+  "personal_review_completed": 100,
+  "adaptations_personally_approved": 16,
+  "personal_review_record": "data/annotations/ahmad_evaluation_review.json",
+  "review_scope": "Questions, labels, choices, answers, relevant source evidence and adaptation changes presented in chat and approved in batches.",
+  "challenge_cases_personally_approved": 24,
+  "challenge_review_record": "data/evaluation/challenge_cases.json",
+  "classification_personal_review_completed": {
+    "train": 186,
+    "validation": 39
+  },
+  "classification_review_record": "data/annotations/classification_labels.json"
+}

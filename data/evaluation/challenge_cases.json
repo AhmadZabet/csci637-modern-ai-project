@@ -1,0 +1,418 @@
+[
+  {
+    "id": "challenge_001",
+    "type": "paraphrase",
+    "question": "Starting from the Sun and counting outward, which planet occupies position eight?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "neptune",
+    "subject": "Earth and Space Science",
+    "parent_evaluation_id": "sciq_test_00785",
+    "passage_id": "passage_b2cf3ae4da0db10f95c4d3c9770612d4fd1aab2e918224f307ff8440cde27bc8",
+    "provided_passages": [
+      {
+        "passage_id": "passage_b2cf3ae4da0db10f95c4d3c9770612d4fd1aab2e918224f307ff8440cde27bc8",
+        "text": "Neptune is shown in Figure below . It is the eighth planet from the Sun. Neptune is so far away you need a telescope to see it from Earth. Neptune is the most distant planet in our solar system. It is nearly 4.5 billion kilometers (2.8 billion miles) from the Sun. One orbit around the Sun takes Neptune 165 Earth years."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_002",
+    "type": "paraphrase",
+    "question": "If I multiply a wave's frequency by its wavelength, which physical quantity do I obtain?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "speed",
+    "subject": "Physics",
+    "parent_evaluation_id": "sciq_test_00297",
+    "passage_id": "passage_99b4c45b50042977df013040175f40629d2251e91424f10e0cb6fc3241b4c185",
+    "provided_passages": [
+      {
+        "passage_id": "passage_99b4c45b50042977df013040175f40629d2251e91424f10e0cb6fc3241b4c185",
+        "text": "The speed of a wave is a product of its wavelength and frequency. Because all electromagnetic waves travel at the same speed through space, a wave with a shorter wavelength must have a higher frequency, and vice versa. This relationship is represented by the equation:."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_003",
+    "type": "paraphrase",
+    "question": "In which gland do T lymphocytes complete their maturation?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "thymus gland",
+    "subject": "Biology",
+    "parent_evaluation_id": "sciq_test_00960",
+    "passage_id": "passage_f677133cfb78e4e182ec2b30dcd6861518a80760b83056a33fbf522a092e3acd",
+    "provided_passages": [
+      {
+        "passage_id": "passage_f677133cfb78e4e182ec2b30dcd6861518a80760b83056a33fbf522a092e3acd",
+        "text": "Both types of lymphocytes are produced in the red bone marrow. They are named for the sites where they grow larger. The \"B\" in B cells stands for “bone. ” B cells grow larger in red bone marrow. The \"T\" in T cells stands for “thymus. ” T cells mature in the thymus gland."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_004",
+    "type": "paraphrase",
+    "question": "What is the basic structural and functional unit shared by living organisms?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "cells",
+    "subject": "Biology",
+    "parent_evaluation_id": "sciq_test_00139",
+    "passage_id": "passage_85c834390c2a6ee779976e5f2ec9ae7e7e45c083138c77cddb599adda57e9048",
+    "provided_passages": [
+      {
+        "passage_id": "passage_85c834390c2a6ee779976e5f2ec9ae7e7e45c083138c77cddb599adda57e9048",
+        "text": "If you zoom in very close on a leaf of a plant, or on the skin on your hand, or a drop of blood, you will find cells, you will find cells ( Figure below ). Cells are the smallest structural and functional unit of all living organisms. Most cells are so small that they are usually visible only through a microscope. Some organisms, like bacteria, plankton that live in the ocean, or the Paramecium, shown in Figure below , are unicellular, made of just one cell. Other organisms have millions, billions, or trillions of cells."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_005",
+    "type": "paraphrase",
+    "question": "Which chemical element is a defining component of organic molecules?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "carbon",
+    "subject": "Chemistry",
+    "parent_evaluation_id": "sciq_test_00860",
+    "passage_id": "passage_a729275a1b84db626962aeb14b25269cb41a691fd60212008963cb35b5757b6f",
+    "provided_passages": [
+      {
+        "passage_id": "passage_a729275a1b84db626962aeb14b25269cb41a691fd60212008963cb35b5757b6f",
+        "text": "The Carbon Cycle Carbon is the fourth most abundant element in living organisms. Carbon is present in all organic molecules, and its role in the structure of macromolecules is of primary importance to living organisms. Carbon compounds contain energy, and many of these compounds from plants and algae have remained stored as fossilized carbon, which humans use as fuel. Since the 1800s, the use of fossil fuels has accelerated. As global demand for Earth’s limited fossil fuel supplies has risen since the beginning of the Industrial Revolution, the amount of carbon dioxide in our atmosphere has increased as the fuels are burned. This increase in carbon dioxide has been associated with climate change and is a major environmental concern worldwide."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_006",
+    "type": "paraphrase",
+    "question": "Which mirror curves outward like the exterior surface of a bowl?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "convex",
+    "subject": "Physics",
+    "parent_evaluation_id": "sciq_test_00707",
+    "passage_id": "passage_9e4b8f3d1b260c92e60f91f5eb922b47f948fa93f29c3c58ac8595e9392bebbe",
+    "provided_passages": [
+      {
+        "passage_id": "passage_9e4b8f3d1b260c92e60f91f5eb922b47f948fa93f29c3c58ac8595e9392bebbe",
+        "text": "The other type of curved mirror, a convex mirror, is shaped like the outside of a bowl. Because of its shape, it can gather and reflect light from a wide area. As you can see in the Figure below , a convex mirror forms only virtual images that are right-side up and smaller than the actual object. You can see how a convex mirror forms an image in the animation at this URL: http://physics. slss. ie/resources/convex%20mirror. swf."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_007",
+    "type": "paraphrase",
+    "question": "What do we call the separation of ions as an ionic solid dissolves?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "dissociation",
+    "subject": "Chemistry",
+    "parent_evaluation_id": "sciq_test_00736",
+    "passage_id": "passage_8b878edd7d4967c1bedf44c1865bd4ad1110446cbbf719888e0e97c8dbf04f1f",
+    "provided_passages": [
+      {
+        "passage_id": "passage_8b878edd7d4967c1bedf44c1865bd4ad1110446cbbf719888e0e97c8dbf04f1f",
+        "text": "Dissociation is the separation of ions that occurs when a solid ionic compound dissolves."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_008",
+    "type": "paraphrase",
+    "question": "What is the name of the imaginary line about which Earth spins?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "axis",
+    "subject": "Earth and Space Science",
+    "parent_evaluation_id": "sciq_test_00746",
+    "passage_id": "passage_dca89023fcc8ceb52925612eebba9ea516543965aad104951eb448f7edd55064",
+    "provided_passages": [
+      {
+        "passage_id": "passage_dca89023fcc8ceb52925612eebba9ea516543965aad104951eb448f7edd55064",
+        "text": "This Concept deals with some Earth basics. Earth is a planet and has the characteristics of a planet. Like other planets, it is nearly round. This is because it has enough mass for its gravity to pull material into a round shape. Earth's gravity has also pulled in small objects, like asteroids. So the planet's orbit is cleared. Earth rotates on its axis and revolves around its star. As a result of its rotation, Earth has a day-night cycle. The tilt of its axis creates the seasons. Earth has layers from crust to mantle to core. The core is divided into a liquid outer core and a solid inner core. The liquid outer core has convection, which generates the magnetic field. The mantle is solid rock. The crust has two major types: continental and oceanic. The crust and uppermost mantle make up the lithosphere. Beneath the lithosphere is the asthenosphere. The lithosphere is brittle and will break. The asthenosphere can flow."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_009",
+    "type": "paraphrase",
+    "question": "What tiny openings do channel proteins create in a cell membrane?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "pores",
+    "subject": "Biology",
+    "parent_evaluation_id": "sciq_test_00506",
+    "passage_id": "passage_1ee594c2f3b756925773e7a99607c6f78136d87f233588fe7b75abd7d2d44082",
+    "provided_passages": [
+      {
+        "passage_id": "passage_1ee594c2f3b756925773e7a99607c6f78136d87f233588fe7b75abd7d2d44082",
+        "text": "Channel proteins form pores, or tiny holes, in the membrane. This allows water molecules and small ions to pass through the membrane without coming into contact with the hydrophobic tails of the lipid molecules in the interior of the membrane."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_010",
+    "type": "paraphrase",
+    "question": "What kind of eclipse occurs as a full Moon passes through Earth's shadow?",
+    "expected_behavior": "answer_with_evidence",
+    "expected_answer": "lunar",
+    "subject": "Earth and Space Science",
+    "parent_evaluation_id": "sciq_test_00210",
+    "passage_id": "passage_3b27ce6166c6424f298596ad600f480b3ce3619a0689daf69bf5b6698194403c",
+    "provided_passages": [
+      {
+        "passage_id": "passage_3b27ce6166c6424f298596ad600f480b3ce3619a0689daf69bf5b6698194403c",
+        "text": "Sometimes a full moon moves through Earth's shadow. This is a lunar eclipse ( Figure below ). During a total lunar eclipse, the Moon travels completely in Earth’s umbra. During a partial lunar eclipse, only a portion of the Moon enters Earth’s umbra. When the Moon passes through Earth’s penumbra, it is a penumbral eclipse. Since Earth’s shadow is large, a lunar eclipse lasts for hours. Anyone with a view of the Moon can see a lunar eclipse."
+      }
+    ],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Answer meaning agrees with expected_answer and explanation cites provided evidence.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_011",
+    "type": "no_evidence",
+    "question": "What was the exact temperature inside the oldest star yesterday?",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_012",
+    "type": "no_evidence",
+    "question": "Which new species will be discovered next year?",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_013",
+    "type": "no_evidence",
+    "question": "What is the exact number of cells in my body right now?",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_014",
+    "type": "no_evidence",
+    "question": "What mineral makes up the rock in my hand? I have provided no description or image.",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_015",
+    "type": "no_evidence",
+    "question": "What was the exact ocean temperature at my location at noon? I have not provided a place or date.",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_016",
+    "type": "no_evidence",
+    "question": "Which unknown chemical is in this unlabelled container? No observations are available.",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_017",
+    "type": "no_evidence",
+    "question": "What is the mass of the planet mentioned in my textbook? I have not supplied its name or the text.",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_018",
+    "type": "no_evidence",
+    "question": "What is the value measured in the experiment? The readings and experiment description are missing.",
+    "expected_behavior": "abstain_or_request_details",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Acknowledges missing evidence or details and avoids inventing a specific answer. Retrieval disabled for this controlled test.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_019",
+    "type": "out_of_scope",
+    "question": "Draft a rental agreement for my apartment.",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_020",
+    "type": "out_of_scope",
+    "question": "Which stock should I buy tomorrow?",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_021",
+    "type": "out_of_scope",
+    "question": "Write a love poem for my partner.",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_022",
+    "type": "out_of_scope",
+    "question": "Predict the winner of the next football match.",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_023",
+    "type": "out_of_scope",
+    "question": "Translate this restaurant menu into French.",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  },
+  {
+    "id": "challenge_024",
+    "type": "out_of_scope",
+    "question": "Give me a strategy for winning a video game.",
+    "expected_behavior": "scope_redirect",
+    "expected_answer": null,
+    "provided_passages": [],
+    "author": "OpenAI Codex",
+    "human_review_status": "approved",
+    "scoring": "Briefly explains science-study scope and invites an in-scope question.",
+    "human_reviewer": "Ahmad Zabet",
+    "human_review_date": "2026-11-17",
+    "human_review_notes": "Approved in chat after viewing all 24 prompts, proposed answers and labels for paraphrases, supporting evidence summaries, and expected behavior for missing-evidence and out-of-scope tracks."
+  }
+]

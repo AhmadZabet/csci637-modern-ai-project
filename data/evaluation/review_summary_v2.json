@@ -16,5 +16,9 @@
   },
   "sha256": "eefa9316575ab1ebcfb9820dcdc5b9c10cbe053f68a21ad0220fe63896453178",
   "checks": "100 unique IDs; answer letters consistent; four distinct choice texts; excerpts are exact source spans.",
-  "limitations": "AI editorial corrections, not independent expert validation. Full original support passages retain known defects; consumers should distinguish source text from selected evidence. Entire retrieval corpus still needs quality safeguards. Phase 1 submission checks remain pending."
+  "limitations": "AI editorial corrections, not independent expert validation. Full original support passages retain known defects; consumers should distinguish source text from selected evidence. Entire retrieval corpus still needs quality safeguards. Phase 1 submission checks remain pending.",
+  "personal_review_completed": 100,
+  "adaptations_personally_approved": 16,
+  "personal_review_record": "data/annotations/ahmad_evaluation_review.json",
+  "review_scope": "Questions, labels, choices, answers, relevant source evidence and adaptation changes presented in chat and approved in batches."
 }

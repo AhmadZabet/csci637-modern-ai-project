@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sciq_train_11501",
+    "reason": "Incorrect state-of-matter answer; exclude from labeled training subset."
+  },
+  {
+    "id": "sciq_train_06277",
+    "reason": "Generic concentration concept has no unique four-class subject."
+  },
+  {
+    "id": "sciq_train_00838",
+    "reason": "Question wording and dataset answer give conflicting subject cues."
+  },
+  {
+    "id": "sciq_train_02791",
+    "reason": "Question is insufficiently specified."
+  },
+  {
+    "id": "sciq_validation_00421",
+    "reason": "General Science is outside the current four-class classification scope."
+  }
+]

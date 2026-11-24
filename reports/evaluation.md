@@ -1,10 +1,73 @@
+# Evaluation and personal review
+
+Updated 17 November 2026. The main set remains data/evaluation/phase1_evaluation_v2.json with 100 labeled questions. The separate data/evaluation/challenge_cases.json contains 24 AI-authored cases and is excluded from classifier fitting and tuning. Paraphrases share parent evaluation groups. No-evidence cases are controlled empty-context tests. Out-of-scope cases test scope redirection. Their small counts require reporting successes as counts and percentages.
+
+## Personal verification by Ahmad
+
+On 17 November 2026, Ahmad Zabet reviewed the 100 evaluation questions in chat batches, with their choices, proposed labels, answers and relevant supporting evidence. Original and revised content was shown for all 16 adapted items. He approved all 100 labels, answers and evidence, including all 16 adaptations. He explicitly retained Chemistry for item 14 and the existing wording of item 17. The item-level decisions are recorded in data/annotations/ahmad_evaluation_review.json. This records the student review of the displayed material; broader scientific validation of every full source passage was not performed.
+
+The original annotation provenance and earlier review descriptions below are retained as historical records. The separate student review file records subsequent approval of the final version. All 24 challenge cases below were approved by Ahmad on 17 November 2026.
+
+## Challenge cases
+
+- challenge_001 (paraphrase) — Starting from the Sun and counting outward, which planet occupies position eight?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_002 (paraphrase) — If I multiply a wave's frequency by its wavelength, which physical quantity do I obtain?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_003 (paraphrase) — In which gland do T lymphocytes complete their maturation?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_004 (paraphrase) — What is the basic structural and functional unit shared by living organisms?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_005 (paraphrase) — Which chemical element is a defining component of organic molecules?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_006 (paraphrase) — Which mirror curves outward like the exterior surface of a bowl?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_007 (paraphrase) — What do we call the separation of ions as an ionic solid dissolves?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_008 (paraphrase) — What is the name of the imaginary line about which Earth spins?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_009 (paraphrase) — What tiny openings do channel proteins create in a cell membrane?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_010 (paraphrase) — What kind of eclipse occurs as a full Moon passes through Earth's shadow?
+  Expected behavior: answer_with_evidence. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_011 (no_evidence) — What was the exact temperature inside the oldest star yesterday?
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_012 (no_evidence) — Which new species will be discovered next year?
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_013 (no_evidence) — What is the exact number of cells in my body right now?
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_014 (no_evidence) — What mineral makes up the rock in my hand? I have provided no description or image.
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_015 (no_evidence) — What was the exact ocean temperature at my location at noon? I have not provided a place or date.
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_016 (no_evidence) — Which unknown chemical is in this unlabelled container? No observations are available.
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_017 (no_evidence) — What is the mass of the planet mentioned in my textbook? I have not supplied its name or the text.
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_018 (no_evidence) — What is the value measured in the experiment? The readings and experiment description are missing.
+  Expected behavior: abstain_or_request_details. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_019 (out_of_scope) — Draft a rental agreement for my apartment.
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_020 (out_of_scope) — Which stock should I buy tomorrow?
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_021 (out_of_scope) — Write a love poem for my partner.
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_022 (out_of_scope) — Predict the winner of the next football match.
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_023 (out_of_scope) — Translate this restaurant menu into French.
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+- challenge_024 (out_of_scope) — Give me a strategy for winning a video game.
+  Expected behavior: scope_redirect. Review: approved by Ahmad Zabet on 17 November 2026.
+
+## Main set and historical traceability
+
 # Adapted evaluation set, version 2
 
 4 November 2026 | OpenAI Codex
 
 All 16 issues recorded in the previous audit have documented editorial resolutions. This is a project-adapted SciQ set, not an unchanged benchmark. It contains 100 items with the same four-subject distribution.
 
-Only item 2 retains an unchanged human-confirmed version. Item 1 was previously human-confirmed but its revised wording is AI-reviewed. All other items have AI-review provenance. No new human approval is inferred.
+Initial provenance was one unchanged human-confirmed item and 99 AI-reviewed items, including 16 adaptations. Subsequent student review of all 100 final items and all adaptations is recorded in the personal-review section above.
 
 Original source questions, alternatives and full supporting passages remain available. Three items use exact evidence excerpts to avoid defective or irrelevant surrounding sentences; this does not repair the original retrieval corpus. When reporting evidence-based scores, specify which evidence field is supplied.
 
@@ -1397,4 +1460,4 @@ This Concept deals with some Earth basics. Earth is a planet and has the charact
 
 ## Historical audit and traceability
 
-Version 1 had 16 flagged issues, all addressed editorially in the version-2 adaptations above. Historical machine-readable files are retained in data/evaluation/quality_audit.json, evaluation_replacements.json and evaluation_adaptations_v2.json. The current 100-item artifact is phase1_evaluation_v2.json; it is AI-reviewed within the limitations stated above. Original candidates and review versions are provenance, not additional final evaluation sets.
+Version 1 had 16 flagged issues, all addressed editorially in the version-2 adaptations above. Historical machine-readable files are retained in data/evaluation/quality_audit.json, evaluation_replacements.json and evaluation_adaptations_v2.json. The current 100-item artifact is phase1_evaluation_v2.json; it was AI-prepared and subsequently approved by Ahmad after the chat review described above. Original candidates and review versions are provenance, not additional final evaluation sets.

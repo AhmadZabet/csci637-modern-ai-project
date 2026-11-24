@@ -1,0 +1,24 @@
+{
+  "counts": {
+    "train": {
+      "Biology": 110,
+      "Chemistry": 27,
+      "Earth and Space Science": 23,
+      "Physics": 26
+    },
+    "validation": {
+      "Biology": 23,
+      "Chemistry": 4,
+      "Earth and Space Science": 5,
+      "Physics": 7
+    }
+  },
+  "input": "question text only",
+  "labels": "subject",
+  "status": "Review status recorded per annotation",
+  "human_confirmed_counts": {
+    "train": 186,
+    "validation": 39
+  },
+  "scope": "Four-class starter subsets, not full-dataset annotation. No Phase 2 model results yet."
+}

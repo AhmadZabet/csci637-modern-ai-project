@@ -1,162 +1,36 @@
-# Data preparation and reproduction
+# Data preparation and verification
 
-> Current commands after simplification: `python src/prepare_data.py` and `python src/prepare_evaluation.py` using the project environment. Eight current artifacts match the prior pipeline by JSON content. Script names and byte comparisons in the historical sections below describe the earlier pipeline. Review decisions are preserved as annotation inputs; historical exploratory outputs are retained rather than regenerated.
+Ahmad Zabet | CSCI637 | Updated 17 November 2026
 
+## Current pipeline
 
-Current scope: Phase 1. Initial inspection and cleaning stages are followed by the successful fresh-environment reproduction check. This document records stage-specific findings; current evaluation details are in evaluation.md.
-
-## Initial inspection
-
-### Phase 1: Initial SciQ inspection
-
-Source: https://huggingface.co/datasets/allenai/sciq
-
-Original splits are preserved. No records have been cleaned or removed.
-
-| Split | Rows | Missing support | Missing question/answer fields | Repeated questions within split |
-|---|---:|---:|---:|---:|
-| train | 11679 | 1198 | 0 | 70 |
-| validation | 1000 | 113 | 0 | 0 |
-| test | 1000 | 116 | 0 | 0 |
-
-### Questions shared across splits
-
-Matching uses case folding and collapsed whitespace; this is not a semantic duplicate check.
-
-- train / validation: 12
-- train / test: 7
-- validation / test: 0
-
-### First training example
-
-```json
-{
-  "question": "What type of organism is commonly used in preparation of foods such as cheese and yogurt?",
-  "distractor3": "viruses",
-  "distractor1": "protozoa",
-  "distractor2": "gymnosperms",
-  "correct_answer": "mesophilic organisms",
-  "support": "Mesophiles grow best in moderate temperature, typically between 25°C and 40°C (77°F and 104°F). Mesophiles are often found living in or on the bodies of humans or other animals. The optimal growth temperature of many pathogenic mesophiles is 37°C (98°F), the normal human body temperature. Mesophilic organisms have important uses in food preparation, including cheese, yogurt, beer and wine."
-}
-```
-
-
-
-
-## Cleaning and record accounting
-
-### Phase 1: Data cleaning
-
-Source: https://huggingface.co/datasets/allenai/sciq
-
-### Rules
-
-- Preserve raw files; normalize whitespace only in output text. Preserve capitalization and punctuation.
-- Match questions using collapsed whitespace and case folding. Paraphrases are not detected.
-- Remove training copies of held-out questions, regardless of their answer wording.
-- Quarantine remaining training groups with differing answer text pending human review; differences are not necessarily errors.
-- Keep one copy of other repeated questions, preferring a supporting passage, then the lowest original row index.
-- Keep missing-support questions for classification; mark has_support=false. Do not invent evidence.
-- Preserve validation/test records with answer variants but flag needs_answer_review; review before selecting evaluation examples.
-- Stable IDs record the original split and zero-based row index.
-
-| Split | Original | Cleaned | Removed/quarantined | Missing support retained | Whitespace changed in original rows |
-|---|---:|---:|---:|---:|---:|
-| train | 11679 | 11577 | 102 | 1190 | 78 |
-| validation | 1000 | 1000 | 0 | 113 | 4 |
-| test | 1000 | 1000 | 0 | 116 | 7 |
-
-### Approved duplicate decisions
-
-3 groups resolved using data/answer_review_decisions.json. Keep the explicitly approved record and exclude its duplicates. These approvals do not count toward the evaluation set.
-
-### Exclusion counts
-
-- answer_variant_pending_review: 26
-- question_in_heldout_split: 19
-- repeated_question: 54
-- reviewed_duplicate: 3
-
-Answer-variant groups awaiting review: 20.
-Unique nonempty passages: 12148.
-
-The passage corpus includes evidence from all cleaned splits. This supports an open-book retrieval evaluation; question/answer labels from validation and test must not be used for training. Shared passages may remain across splits, so these splits do not establish generalization to unseen documents.
-
-### Verification
-
-Passed: unique normalized questions within each split, no normalized question overlap between splits, all source records accounted for, and unchanged raw file hashes.
-
-Automated checks are not a scientific correctness review. This cleaning stage does not assign subject labels or review evaluation questions; see evaluation.md for the separate evaluation-stage results.
-
-### Reproduce
-
-Run from the project root after the inspection/download script:
+Run using the project environment from the repository root.
 
 ```powershell
-.\.venv\Scripts\python.exe src\phase1_clean_data.py
+.\.venv\Scripts\python.exe src\prepare_data.py --skip-download
+.\.venv\Scripts\python.exe src\prepare_evaluation.py
 ```
 
+Omit --skip-download when raw files are missing. The source revision is pinned in data/source_version.json, and requirements-lock.txt records the tested package versions. common.py supplies shared path, JSON and text helpers.
 
-## Reproduction verification
+prepare_data.py saves cleaned train, validation and test splits, distinct passages, removal reasons, unresolved answer groups and raw hashes. It also applies data/annotations/classification_labels.json to generate classification_train.json and classification_validation.json. These subsets have AI-drafted subject labels subsequently reviewed and approved by Ahmad. prepare_evaluation.py rebuilds the fixed 100-item evaluation from source records and recorded annotations. It does not create personal verification.
 
-### Phase 1 reproducibility verification
+## Cleaning outcome
 
-Date: 4 November 2026
+All original records are accounted for. The cleaned split sizes are 11,577, 1,000 and 1,000. There are 12,148 unique passages. Training excludes 19 held-out overlaps, 54 ordinary duplicates, 3 reviewed duplicates and 26 records awaiting answer review. Missing support is retained and marked when other fields are usable. Normalized question matching ignores case and extra whitespace.
 
-### Result
+## Verification on 17 November
 
-PASS: eight scripts completed successfully in an isolated virtual environment. All 22 generated JSON artifacts matched the existing project files byte for byte. pip check reported no broken requirements.
+Both current scripts ran successfully in a separate directory using copies of pinned raw data and annotation inputs. Ten regenerated JSON outputs matched current project values. Classification question keys were checked against each other and against the test evaluation. All 100 main items have unique IDs and valid answer choices and passage references. The 24 challenge cases have the expected 10/8/6 track distribution, and paraphrase source IDs, answers and evidence match their parent evaluation items. All 100 personal-review entries now contain student confirmations, including all 16 adaptations.
 
-### Environment and procedure
+Full results are in feedback-verification.json. This technical verification does not certify scientific label quality. An earlier fresh-environment run reproduced the previous eight-script pipeline and 22 historical artifacts byte for byte. After simplification, the current pipeline uses three Python files. Historical verification files refer to their dated versions.
 
-- Python: Python 3.15.2
-- Platform: Windows-11-10.0.26100-SP0
-- SciQ revision: 2c94ad3e1aafab77146f384e23536f97a4849815
-- Dependencies: requirements-lock.txt, captured from the original environment.
-- Fresh virtual environment and fresh Hugging Face dataset cache. Pip reused previously downloaded package archives.
-- Inputs copied: preparation scripts, requirements, and approved duplicate decisions. Original raw, cleaned and evaluation outputs were not copied into the verification workspace.
-- Regenerated candidate selection, review, historical audit, adaptations, taxonomy sample and training-label pilot.
+## Submission evidence
 
-### Scripts
+The remote phase-1 tag was verified on 17 November. The tag object is 440a223225d536c2a15fe68b4b2904192a2e5f64 and the referenced commit is 6b6a681272bd921292963c42b187d929dff24471. The local annotated tag records 4 November 2026 at 04:31:05 Beirut time. No tag was moved or recreated. The exact deadline and instructor's late-status decision remain to be confirmed. The correction work is local and requires submission after review.
 
-1. phase1_inspect_data.py
-2. phase1_clean_data.py
-3. phase1_prepare_evaluation.py
-4. phase1_review_evaluation.py
-5. phase1_audit_evaluation.py
-6. phase1_adapt_evaluation.py
-7. phase1_check_taxonomy.py
-8. phase1_label_subject_pilot.py
+## Remaining prerequisites
 
-### Artifact comparisons
+Ahmad completed verification of the 100 main labels and 16 adapted questions. Review of all 186 training and 39 validation subset labels is complete; deadline confirmation remains required. All 24 challenge cases were approved by Ahmad on 17 November 2026. The 186/39 labeled subsets are starter data. The full cleaned training and validation splits are not fully annotated, and the small class counts require broader annotation for reliable baseline experiments.
 
-| File | Result |
-|---|---|
-| data/annotations/subject_pilot.json | Exact byte match |
-| data/annotations/subject_pilot_summary.json | Exact byte match |
-| data/evaluation/evaluation_adaptations_v2.json | Exact byte match |
-| data/evaluation/evaluation_replacements.json | Exact byte match |
-| data/evaluation/phase1_candidates.json | Exact byte match |
-| data/evaluation/phase1_evaluation.json | Exact byte match |
-| data/evaluation/phase1_evaluation_v2.json | Exact byte match |
-| data/evaluation/quality_audit.json | Exact byte match |
-| data/evaluation/review_summary.json | Exact byte match |
-| data/evaluation/review_summary_v2.json | Exact byte match |
-| data/evaluation/selection_manifest.json | Exact byte match |
-| data/processed/answer_review_queue.json | Exact byte match |
-| data/processed/cleaning_audit.json | Exact byte match |
-| data/processed/passages.json | Exact byte match |
-| data/processed/raw_sha256.json | Exact byte match |
-| data/processed/sciq_test.json | Exact byte match |
-| data/processed/sciq_train.json | Exact byte match |
-| data/processed/sciq_validation.json | Exact byte match |
-| data/raw/sciq_test.json | Exact byte match |
-| data/raw/sciq_train.json | Exact byte match |
-| data/raw/sciq_validation.json | Exact byte match |
-| data/taxonomy_coverage.json | Exact byte match |
-
-### Limits
-
-This is a data-pipeline reproduction check on one Windows/Python environment. It does not validate the scientific accuracy of labels, constitute human review, establish portability to other systems, or test any trained model. The PDF was generated and visually checked separately. Historical version-1 audit files still describe the earlier findings; version 2 records the editorial corrections.
-
-The isolated verification workspace is retained under tmp/reproduction_check and excluded from Git. Machine-readable hashes and environment details are in reports/reproduction-check.json. Local preparation is complete; GitHub submission requirements remain separate.
+Ahmad completed primary-subject review of all 186 training and 39 validation subset labels in chat batches by 24 November 2026. The original AI authorship, individual review dates and interdisciplinary decisions are retained in data/annotations/classification_labels.json. Approval covers the displayed question and answer context for subject labeling, not independent validation of every source answer or full passage. The full cleaned SciQ splits remain only partly labeled; broader annotation and class coverage are needed for reliable model comparisons.
