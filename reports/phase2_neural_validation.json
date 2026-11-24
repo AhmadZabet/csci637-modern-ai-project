@@ -1,0 +1,593 @@
+{
+  "stage": "validation_only_test_not_evaluated",
+  "random_seed": 637,
+  "sizes": {
+    "train": 186,
+    "validation": 39
+  },
+  "data_fingerprints": {
+    "train": "1531f07f675145a4bf90349d7f246dcb4774e2ca2d867d084594cd70ffbd51f0",
+    "validation": "e70fe7da7b97e8d4477abf387914d3bd23c48dd7412e646689804393d587805c"
+  },
+  "tfidf": {
+    "lowercase": true,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 1,
+    "max_features": 5000,
+    "sublinear_tf": true
+  },
+  "candidate_results": [
+    {
+      "hidden_units": 16,
+      "alpha": 1.0,
+      "accuracy": 0.6666666666666666,
+      "macro_f1": 0.39272030651340994,
+      "iterations": 68,
+      "training_loss": 0.393322001241113
+    },
+    {
+      "hidden_units": 16,
+      "alpha": 0.1,
+      "accuracy": 0.6410256410256411,
+      "macro_f1": 0.37631578947368416,
+      "iterations": 82,
+      "training_loss": 0.06142307498773235
+    },
+    {
+      "hidden_units": 16,
+      "alpha": 0.01,
+      "accuracy": 0.6410256410256411,
+      "macro_f1": 0.37631578947368416,
+      "iterations": 72,
+      "training_loss": 0.008445702505501312
+    },
+    {
+      "hidden_units": 32,
+      "alpha": 1.0,
+      "accuracy": 0.6666666666666666,
+      "macro_f1": 0.39272030651340994,
+      "iterations": 56,
+      "training_loss": 0.39332335697022913
+    },
+    {
+      "hidden_units": 32,
+      "alpha": 0.1,
+      "accuracy": 0.6410256410256411,
+      "macro_f1": 0.37631578947368416,
+      "iterations": 60,
+      "training_loss": 0.06144857463865139
+    },
+    {
+      "hidden_units": 32,
+      "alpha": 0.01,
+      "accuracy": 0.6410256410256411,
+      "macro_f1": 0.39870129870129867,
+      "iterations": 61,
+      "training_loss": 0.008386089111514141
+    }
+  ],
+  "selected_parameters": {
+    "hidden_units": 32,
+    "alpha": 0.01
+  },
+  "fixed_settings": {
+    "max_iter": 1000,
+    "max_fun": 15000,
+    "tol": 0.0001
+  },
+  "architecture": "One ReLU hidden layer and a four-class softmax output; L-BFGS optimization; no class or sample weighting.",
+  "validation": {
+    "accuracy": 0.6410256410256411,
+    "macro_f1": 0.39870129870129867,
+    "per_class": {
+      "Biology": {
+        "precision": 0.65625,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.7636363636363637,
+        "support": 23.0
+      },
+      "Chemistry": {
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1-score": 0.2857142857142857,
+        "support": 4.0
+      },
+      "Physics": {
+        "precision": 0.75,
+        "recall": 0.42857142857142855,
+        "f1-score": 0.5454545454545454,
+        "support": 7.0
+      },
+      "Earth and Space Science": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 5.0
+      },
+      "accuracy": 0.6410256410256411,
+      "macro avg": {
+        "precision": 0.4348958333333333,
+        "recall": 0.39790372670807456,
+        "f1-score": 0.39870129870129867,
+        "support": 39.0
+      },
+      "weighted avg": {
+        "precision": 0.5558226495726496,
+        "recall": 0.6410256410256411,
+        "f1-score": 0.5775557775557775,
+        "support": 39.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        21,
+        1,
+        1,
+        0
+      ],
+      [
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        3,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0
+      ]
+    ],
+    "class_order": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Earth and Space Science"
+    ],
+    "confusion_matrix_axes": "rows=true subject, columns=predicted subject"
+  },
+  "classical_validation": {
+    "accuracy": 0.6666666666666666,
+    "macro_f1": 0.5411904761904762,
+    "per_class": {
+      "Biology": {
+        "precision": 0.7037037037037037,
+        "recall": 0.8260869565217391,
+        "f1-score": 0.76,
+        "support": 23.0
+      },
+      "Chemistry": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1-score": 0.5,
+        "support": 4.0
+      },
+      "Physics": {
+        "precision": 0.5714285714285714,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.5714285714285714,
+        "support": 7.0
+      },
+      "Earth and Space Science": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1-score": 0.3333333333333333,
+        "support": 5.0
+      },
+      "accuracy": 0.6666666666666666,
+      "macro avg": {
+        "precision": 0.6937830687830688,
+        "recall": 0.5243788819875776,
+        "f1-score": 0.5411904761904762,
+        "support": 39.0
+      },
+      "weighted avg": {
+        "precision": 0.6970560303893638,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.6447863247863248,
+        "support": 39.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        19,
+        1,
+        3,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        1
+      ]
+    ],
+    "class_order": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Earth and Space Science"
+    ],
+    "confusion_matrix_axes": "rows=true subject, columns=predicted subject"
+  },
+  "majority_reference": {
+    "accuracy": 0.5897435897435898,
+    "macro_f1": 0.18548387096774194,
+    "per_class": {
+      "Biology": {
+        "precision": 0.5897435897435898,
+        "recall": 1.0,
+        "f1-score": 0.7419354838709677,
+        "support": 23.0
+      },
+      "Chemistry": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 4.0
+      },
+      "Physics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 7.0
+      },
+      "Earth and Space Science": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 5.0
+      },
+      "accuracy": 0.5897435897435898,
+      "macro avg": {
+        "precision": 0.14743589743589744,
+        "recall": 0.25,
+        "f1-score": 0.18548387096774194,
+        "support": 39.0
+      },
+      "weighted avg": {
+        "precision": 0.34779750164365547,
+        "recall": 0.5897435897435898,
+        "f1-score": 0.43755169561621177,
+        "support": 39.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        23,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0
+      ]
+    ],
+    "class_order": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Earth and Space Science"
+    ],
+    "confusion_matrix_axes": "rows=true subject, columns=predicted subject"
+  },
+  "training": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "per_class": {
+      "Biology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 110.0
+      },
+      "Chemistry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 27.0
+      },
+      "Physics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 26.0
+      },
+      "Earth and Space Science": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 23.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 186.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 186.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        110,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        27,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        26,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        23
+      ]
+    ],
+    "class_order": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Earth and Space Science"
+    ],
+    "confusion_matrix_axes": "rows=true subject, columns=predicted subject"
+  },
+  "vocabulary_size": 2830,
+  "versions": {
+    "python": "3.15.2",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "predictions": [
+    {
+      "id": "sciq_validation_00589",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00716",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00231",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00264",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00227",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00596",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00387",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00853",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00935",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00274",
+      "true_subject": "Chemistry",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00906",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00715",
+      "true_subject": "Chemistry",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00397",
+      "true_subject": "Physics",
+      "predicted_subject": "Physics"
+    },
+    {
+      "id": "sciq_validation_00826",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00461",
+      "true_subject": "Earth and Space Science",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00693",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00310",
+      "true_subject": "Biology",
+      "predicted_subject": "Physics"
+    },
+    {
+      "id": "sciq_validation_00450",
+      "true_subject": "Physics",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00627",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00037",
+      "true_subject": "Chemistry",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00304",
+      "true_subject": "Chemistry",
+      "predicted_subject": "Chemistry"
+    },
+    {
+      "id": "sciq_validation_00781",
+      "true_subject": "Physics",
+      "predicted_subject": "Physics"
+    },
+    {
+      "id": "sciq_validation_00771",
+      "true_subject": "Physics",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00667",
+      "true_subject": "Earth and Space Science",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00478",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00381",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00885",
+      "true_subject": "Earth and Space Science",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00007",
+      "true_subject": "Earth and Space Science",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00917",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00863",
+      "true_subject": "Physics",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00015",
+      "true_subject": "Earth and Space Science",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00414",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00834",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00656",
+      "true_subject": "Biology",
+      "predicted_subject": "Chemistry"
+    },
+    {
+      "id": "sciq_validation_00390",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00175",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00125",
+      "true_subject": "Biology",
+      "predicted_subject": "Biology"
+    },
+    {
+      "id": "sciq_validation_00809",
+      "true_subject": "Physics",
+      "predicted_subject": "Physics"
+    },
+    {
+      "id": "sciq_validation_00437",
+      "true_subject": "Physics",
+      "predicted_subject": "Chemistry"
+    }
+  ],
+  "limitation": "Small validation set used for tuning, one random seed, unequal weighting strategies across model families; no final test result or robust superiority claim."
+}

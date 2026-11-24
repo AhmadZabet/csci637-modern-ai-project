@@ -54,3 +54,115 @@ The instructor awarded 2.0/2.0 for cleaning and 1.5/1.5 for the datasheet. Corre
 On 17 November 2026, Ahmad Zabet reviewed the 100 evaluation questions in chat batches, with their choices, proposed labels, answers and relevant supporting evidence. Original and revised content was shown for all 16 adapted items. He approved all 100 labels, answers and evidence, including all 16 adaptations. He explicitly retained Chemistry for item 14 and the existing wording of item 17. The item-level decisions are recorded in data/annotations/ahmad_evaluation_review.json. This records the student review of the displayed material; broader scientific validation of every full source passage was not performed.
 
 Ahmad completed primary-subject review of all 186 training and 39 validation subset labels in chat batches by 24 November 2026. The original AI authorship, individual review dates and interdisciplinary decisions are retained in data/annotations/classification_labels.json. Approval covers the displayed question and answer context for subject labeling, not independent validation of every source answer or full passage. The full cleaned SciQ splits remain only partly labeled; broader annotation and class coverage are needed for reliable model comparisons.
+
+## Phase 2 experiment setup (24 November 2026)
+
+The first Phase 2 step checks the reviewed classification data and fixes the comparison protocol. No baseline has been trained or scored yet. The machine-readable setup, source IDs and SHA-256 fingerprints of model-relevant fields are in data/annotations/phase2_experiment.json. Future training should verify these fingerprints before fitting; any dataset revision must be documented before final test scoring.
+
+| Subject | Training | Validation | Test |
+|---|---:|---:|---:|
+| Biology | 110 | 23 | 44 |
+| Chemistry | 27 | 4 | 19 |
+| Physics | 26 | 7 | 19 |
+| Earth and Space Science | 23 | 5 | 18 |
+| Total | 186 | 39 | 100 |
+
+All sets have unique IDs and normalized question keys, no empty questions and no cross-split normalized question overlap. This is an exact-text check, not a semantic leakage guarantee. Training and validation subject labels have recorded student approval. The existing curated 100-question evaluation supplies test subject labels; its answer-generation fields will not be used as classifier inputs.
+
+Use question text as input and subject as target. Compare TF-IDF plus logistic regression against TF-IDF plus an MLP neural baseline, with the same representation settings. Fit the vocabulary and IDF on training questions only. Use seed 637 and retain the existing source splits. Record the candidate hyperparameter grid before training, select on validation macro-F1, break ties by accuracy and then simplicity, and evaluate selected models on the test set after tuning. Preserve the same test set for Phase 3. Do not use test scores for further tuning.
+
+Report accuracy, macro-F1, per-class precision/recall/F1/support and a confusion matrix, alongside a training-majority dummy reference. The 186/39 training/validation subsets are small and imbalanced: only four validation examples are Chemistry. Initial experiments are feasible, but broader reviewed annotation is advisable before strong model-comparison claims. No model result or target achievement is asserted.
+
+## Phase 2 classical baseline: validation results
+
+On 24 November 2026, src/train_classical.py trained six TF-IDF plus logistic regression candidates, using only the fixed 186 training questions. The six settings were recorded before training: C in {0.1, 1, 10} and class_weight in {None, balanced}. TF-IDF uses word unigrams and bigrams, at most 5,000 features, min_df=1 and sublinear term frequency. Vocabulary and IDF are fitted within the training pipeline only. Selection uses validation macro-F1, then accuracy, then the declared grid order. Convergence warnings fail the run rather than silently accepting an unfinished fit.
+
+Selected parameters: `{"C": 0.1, "class_weight": "balanced"}`. Validation set: 39 questions.
+
+| Model | Validation accuracy | Validation macro-F1 |
+|---|---:|---:|
+| Logistic regression | 66.67% | 0.5412 |
+| Training-majority reference | 58.97% | 0.1855 |
+
+| Subject | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| Biology | 0.704 | 0.826 | 0.760 | 23 |
+| Chemistry | 0.500 | 0.500 | 0.500 | 4 |
+| Physics | 0.571 | 0.571 | 0.571 | 7 |
+| Earth and Space Science | 1.000 | 0.200 | 0.333 | 5 |
+
+Validation confusion matrix; rows are true labels, columns are predictions:
+
+| True / predicted | Biology | Chemistry | Physics | Earth and Space Science |
+|---|---:|---:|---:|---:|
+| Biology | 19 | 1 | 3 | 0 |
+| Chemistry | 2 | 2 | 0 | 0 |
+| Physics | 2 | 1 | 4 | 0 |
+| Earth and Space Science | 4 | 0 | 0 | 1 |
+
+These are validation results used for selection, not final test results or evidence of a neural-model comparison. The test records were not loaded by the training script. With 39 validation cases, each question changes accuracy by about 2.56 percentage points. Minority-class estimates are especially uncertain. No additional tuning was performed after viewing these results. Candidate scores, individual validation predictions, environment versions and fingerprints are in reports/phase2_classical_validation.json. The pipeline is saved locally as models/classical.joblib, which is ignored by Git and can be regenerated using the locked environment. Reloading the saved model reproduced all validation predictions. The neural baseline, final test comparison and cumulative Phase 2 PDF section remain unfinished.
+
+## Phase 2 neural baseline: validation comparison
+
+On 24 November 2026, src/train_neural.py trained six predeclared MLP candidates using the same training-only TF-IDF settings, fixed split fingerprints and seed 637 as the classical baseline. The network has one ReLU hidden layer (16 or 32 neurons), a four-class softmax output and L-BFGS optimization. L2 alpha was searched in {1.0, 0.1, 0.01}. The search was recorded after observing classical validation scores but before any neural fitting. No test results were used. Early stopping is disabled, so no extra internal holdout reduces the 186 training examples. Convergence warnings fail the run.
+
+Both searches contain six candidates selected by validation macro-F1, then accuracy, with the declared simplicity tie-break. The classical search includes class weighting, whereas the neural search has no sample weighting; the comparison therefore covers the selected complete pipelines rather than isolating architecture alone. It also uses only one random seed. Source: https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html.
+
+Selected MLP: `{"hidden_units": 32, "alpha": 0.01}`.
+
+| Model | Validation accuracy | Validation macro-F1 |
+|---|---:|---:|
+| Logistic regression | 66.67% | 0.5412 |
+| MLP | 64.10% | 0.3987 |
+| Training-majority reference | 58.97% | 0.1855 |
+
+MLP per-subject validation results:
+
+| Subject | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| Biology | 0.656 | 0.913 | 0.764 | 23 |
+| Chemistry | 0.333 | 0.250 | 0.286 | 4 |
+| Physics | 0.750 | 0.429 | 0.545 | 7 |
+| Earth and Space Science | 0.000 | 0.000 | 0.000 | 5 |
+
+MLP validation confusion matrix; rows=true, columns=predicted:
+
+| True / predicted | Biology | Chemistry | Physics | Earth and Space Science |
+|---|---:|---:|---:|---:|
+| Biology | 21 | 1 | 1 | 0 |
+| Chemistry | 3 | 1 | 0 | 0 |
+| Physics | 3 | 1 | 3 | 0 |
+| Earth and Space Science | 5 | 0 | 0 | 0 |
+
+The selected MLP's training accuracy is 100.00%, versus 64.10% on validation. This gap is consistent with overfitting on the small training sample, but does not establish its cause. Logistic regression is stronger on this validation set. These validation scores were used for selection and are not final performance estimates. No additional settings were tried after viewing these results. Both selected settings are now recorded in the experiment setup.
+
+Candidate results, iteration counts, training loss, environment versions and validation predictions are in reports/phase2_neural_validation.json. The saved pipeline is models/neural.joblib (ignored by Git, reproducible from code). The neural script reuses load_split and metrics from train_classical.py without running classical training. The test set remains unscored. Next: verify and evaluate both selected pipelines on the reserved test set, then update the cumulative PDF with the complete Phase 2 comparison.
+
+
+## Phase 2 final test outcome
+
+| Model | Test accuracy | Test macro-F1 |
+|---|---:|---:|
+| Logistic regression | 53.00% | 0.4104 |
+| MLP | 53.00% | 0.3561 |
+| Training-majority reference | 44.00% | 0.1528 |
+
+The 100 fixed test questions were evaluated after validation selection, without further fitting or tuning. Both subject-classification acceptance targets remain unmet. Full per-class scores, confusion matrices and error counts are in reports/evaluation.md; exact predictions and artifact hashes are in reports/phase2_test_comparison.json. The baselines and test set are retained for Phase 3. The cumulative PDF now includes the three-page Phase 2 section. Phase 2 commit/upload and release-tag actions remain pending.
+
+
+## Phase 2 submission checklist (24 November 2026)
+
+- [x] Classical model trained and evaluated.
+- [x] Neural baseline trained and evaluated.
+- [x] Training/validation/test protocol, source IDs, seed and fingerprints documented.
+- [x] Metrics comparison, per-class scores and confusion matrices reported.
+- [x] Trained-model regeneration code and exact dependencies available.
+- [x] README reproduction instructions updated.
+- [x] Three-page Phase 2 section included in the cumulative PDF (pages 4-6).
+- [x] AI-tool disclosure updated.
+- [x] Separate-folder retraining reproduced model selection and predictions.
+- [ ] Phase 2 changes committed and uploaded.
+- [ ] Release tagged phase-2; deadline compliance confirmed.
+- [ ] Regular commits throughout Phase 2 evidenced in Git history (none found at the local check).
+
+The modeling and local report work is prepared. Submission completion and deadline compliance are separate. Classification targets remain unmet, as reported; the models are retained without test-driven retuning for Phase 3 comparison.

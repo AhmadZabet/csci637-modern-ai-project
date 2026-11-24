@@ -1461,3 +1461,57 @@ This Concept deals with some Earth basics. Earth is a planet and has the charact
 ## Historical audit and traceability
 
 Version 1 had 16 flagged issues, all addressed editorially in the version-2 adaptations above. Historical machine-readable files are retained in data/evaluation/quality_audit.json, evaluation_replacements.json and evaluation_adaptations_v2.json. The current 100-item artifact is phase1_evaluation_v2.json; it was AI-prepared and subsequently approved by Ahmad after the chat review described above. Original candidates and review versions are provenance, not additional final evaluation sets.
+
+## Phase 2 fixed-test comparison (24 November 2026)
+
+After both models were selected using validation results, src/evaluate_baselines.py checked their recorded parameters, data fingerprints, identical fitted vocabulary and IDF, and validation predictions before loading the reserved 100-question test set. No fitting, refitting or tuning occurred during test scoring. Models remain trained on the 186 training examples; validation was not merged into training. The same fixed test questions and label order must be reused in Phase 3.
+
+| Model | Test accuracy | Test macro-F1 |
+|---|---:|---:|
+| Logistic regression | 53.00% | 0.4104 |
+| MLP | 53.00% | 0.3561 |
+| Training-majority reference | 44.00% | 0.1528 |
+
+Neither model meets the project subject-classification targets of 85% accuracy and 0.80 macro-F1. Both exceed the training-majority reference, but the results do not establish robust superiority. The classical pipeline has the higher test macro-F1 at equal accuracy. Its class-weighting search differs from the unweighted MLP search, so this comparison does not isolate architecture alone. The small training subsets, limited validation counts and single seed limit conclusions. The curated test set was reviewed during dataset preparation and is not a representative random benchmark. No further baseline tuning was performed from these test scores.
+
+### Logistic regression: test per-subject results
+
+| Subject | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| Biology | 0.574 | 0.886 | 0.696 | 44 |
+| Chemistry | 0.273 | 0.158 | 0.200 | 19 |
+| Physics | 0.467 | 0.368 | 0.412 | 19 |
+| Earth and Space Science | 0.667 | 0.222 | 0.333 | 18 |
+
+Confusion matrix; rows=true label, columns=prediction:
+
+| True / predicted | Biology | Chemistry | Physics | Earth and Space Science |
+|---|---:|---:|---:|---:|
+| Biology | 39 | 4 | 0 | 1 |
+| Chemistry | 11 | 3 | 4 | 1 |
+| Physics | 10 | 2 | 7 | 0 |
+| Earth and Space Science | 8 | 2 | 4 | 4 |
+
+Lowest observed subject recall: Chemistry (0.158). The largest error cell has 11 Chemistry questions predicted as Biology. These counts describe this test set and are not grounds for retuning the frozen models.
+
+### MLP: test per-subject results
+
+| Subject | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| Biology | 0.524 | 1.000 | 0.688 | 44 |
+| Chemistry | 0.750 | 0.158 | 0.261 | 19 |
+| Physics | 0.444 | 0.211 | 0.286 | 19 |
+| Earth and Space Science | 0.667 | 0.111 | 0.190 | 18 |
+
+Confusion matrix; rows=true label, columns=prediction:
+
+| True / predicted | Biology | Chemistry | Physics | Earth and Space Science |
+|---|---:|---:|---:|---:|
+| Biology | 44 | 0 | 0 | 0 |
+| Chemistry | 14 | 3 | 1 | 1 |
+| Physics | 15 | 0 | 4 | 0 |
+| Earth and Space Science | 11 | 1 | 4 | 2 |
+
+Lowest observed subject recall: Earth and Space Science (0.111). The largest error cell has 15 Physics questions predicted as Biology. These counts describe this test set and are not grounds for retuning the frozen models.
+
+The JSON comparison records every prediction, misclassified source ID, model hash, validation-report hash, split fingerprint and target check. These metrics evaluate subject classification only. The 24 behavioral challenges, answer correctness, explanations and retrieval are outside this baseline comparison. The cumulative PDF now includes the three-page Phase 2 section; submission status is recorded in the README and methodology checklist.

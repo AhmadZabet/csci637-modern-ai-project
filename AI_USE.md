@@ -21,3 +21,15 @@ The classification subset labels were AI-drafted and subsequently reviewed and a
 On 17 November 2026, Ahmad approved the primary subject labels of all 39 validation-subset questions after viewing their question and dataset-answer context in chat. He retained Biology for the catalysis-in-organisms item, with Chemistry recorded as an overlap. This approval covers subject labels. The 186 training-subset labels were subsequently reviewed and approved by 24 November 2026.
 
 Ahmad completed primary-subject review of all 186 training and 39 validation subset labels in chat batches by 24 November 2026. The original AI authorship, individual review dates and interdisciplinary decisions are retained in data/annotations/classification_labels.json. Approval covers the displayed question and answer context for subject labeling, not independent validation of every source answer or full passage. The full cleaned SciQ splits remain only partly labeled; broader annotation and class coverage are needed for reliable model comparisons.
+
+
+For Phase 2 on 24 November 2026, Codex checked the fixed classification splits, drafted the experiment protocol and classical training code, installed dependencies, ran the predeclared validation search, and recorded its metrics and documentation. These actions do not assert student review of the new code or scientific validation of model predictions. The test set has not been scored at this stage.
+
+
+For the Phase 2 neural step on 24 November 2026, Codex drafted and ran the predeclared six-candidate MLP search, reused the classical data and metric helpers, saved validation predictions and the model, and documented the observed comparison. The test set remains unscored. Student explanation and review of this new code have not been asserted.
+
+
+For the Phase 2 fixed-test step on 24 November 2026, Codex wrote and ran the evaluation script for the validation-selected baselines, verified model/data provenance, and documented final classification scores, confusion matrices and errors. No further fitting or tuning was performed from the test results. Earlier statements about the unscored test set describe the prior training stages.
+
+
+For Phase 2 reporting and verification, Codex reproduced the training and evaluation in a separate folder using the same project environment, corrected a serialized-artifact reproduction check, and drafted and rendered the three-page Phase 2 section of the cumulative PDF. The submission checklist reflects the observed Git status; no Phase 2 upload, release tag, student code review or grade outcome is asserted.
